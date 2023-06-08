@@ -8,7 +8,8 @@ interface IInterchainSecurityModule {
         AGGREGATION,
         LEGACY_MULTISIG,
         MERKLE_ROOT_MULTISIG,
-        MESSAGE_ID_MULTISIG
+        MESSAGE_ID_MULTISIG,
+        OPTIMISTIC
     }
 
     /**
@@ -26,9 +27,10 @@ interface IInterchainSecurityModule {
      * @param _message Hyperlane encoded interchain message
      * @return True if the message was verified
      */
-    function verify(bytes calldata _metadata, bytes calldata _message)
-        external
-        returns (bool);
+    function verify(
+        bytes calldata _metadata,
+        bytes calldata _message
+    ) external returns (bool);
 }
 
 interface ISpecifiesInterchainSecurityModule {
